@@ -35,9 +35,9 @@ class AdminList(commands.Cog):
             member = disnake.utils.get(guild.members, name=user[1])
             
             if member is not None and member == guild.owner:
-                text += f'**{n}. {member.display_name} <:Crown:1259381317024354346>** '
+                text += f'**{n}. {member.display_name} <:Crown:1259381317024354346>**\n'
             else:
-                text += f'**{n}. {member.display_name}** '
+                text += f'**{n}. {member.display_name}**\n'
                 
             if loop_count % 10 == 0 or loop_count == len(top):
                 embed = disnake.Embed(color=disnake.Color.old_blurple(), title='Администрация сервера')

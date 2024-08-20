@@ -341,7 +341,7 @@ class Admin(commands.Cog):
         img_bytes.seek(0)
         image_file = disnake.File(img_bytes, filename=f'{member.display_name}_profile.png')
 
-        await interaction.edit_original_message(view=view, file=image_file)
+        await interaction.followup.send(view=view, file=image_file)
 
 
 def setup(bot):

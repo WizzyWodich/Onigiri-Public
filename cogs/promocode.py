@@ -47,6 +47,7 @@ class PromocodeCog(commands.Cog):
         await interaction.response.send_message(f"Промокод '{code}' успешно удален.", ephemeral=True)
 
     @commands.slash_command(name="list_promocodes", description="Показать все промокоды")
+    @commands.is_owner()
     async def list_promocodes(self, interaction: disnake.ApplicationCommandInteraction):
         promocodes = await self.promocode_db.get_all_promocodes()
         

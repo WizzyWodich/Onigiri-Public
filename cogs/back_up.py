@@ -20,8 +20,8 @@ class BackupCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.owner_id = ''  # Укажите ваш Discord ID
-        self.gmail_user = '' # Укажите почту
-        self.gmail_password = '' # Укажите пароль приложений
+        self.gmail_user = ''
+        self.gmail_password = ''
 
         # Настройка задачи резервного копирования
         self.backup_task.start()
@@ -41,7 +41,7 @@ class BackupCog(commands.Cog):
     async def perform_backup(self):
         db_path = 'database/fileDB/BotDDatabase.db'
         backup_path = 'database/backUP/BDatabase.db'
-        receiver_email = '' # Ваша почта
+        receiver_email = ''
         subject = 'Еженедельный бекап БД'
         body = 'Ваш бекап БД за неделю.'
 
