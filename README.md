@@ -32,4 +32,11 @@
 4. Запустите `pip install -r requirements.txt` для установки зависимостей
 5. Замените `STABLE = ...` в файле `config/config.env` на свой реальный токен Discord-бота.
 6. Создайте папку `fileDB` в `database/`
+   - Структура папки:
+     ```
+     |-database/
+       |- BackUP/
+       |- fileDB/
+       - all_file_DB.py
+     ```
 7. Запустите `python main.py` для запуска бота
