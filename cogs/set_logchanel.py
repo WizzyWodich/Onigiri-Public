@@ -12,7 +12,7 @@ class Set_LogChannel(commands.Cog):
     @commands.has_permissions(administrator=True)
     async def set_log(self, interaction: disnake.ApplicationCommandInteraction, channel: disnake.TextChannel):
         guild = interaction.guild
-        await log_db.insert_logs_channel(interaction, channel, guild)
+        await log_db.insert_logs_channel(channel, guild)
         await interaction.send(f"### Вы установили {channel.mention} для логирования", ephemeral=True)
         
         

@@ -21,7 +21,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 intents = disnake.Intents.all()
 intents.message_content = True
 prefix = os.getenv('PREFIX')
-bot = commands.Bot(command_prefix=prefix, intents=intents)
+bot = commands.Bot(command_prefix=prefix, intents=intents, test_guilds=[1155576584523231373])
 bot.remove_command("help")
 logging.basicConfig(
     level=logging.INFO,
