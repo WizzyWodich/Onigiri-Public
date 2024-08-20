@@ -314,6 +314,13 @@ class Admin(commands.Cog):
         backdraw.text((x, 220), warns, font=font, fill=fill_color)
         
         
+        if score is None:
+            score = 0
+        if coins is None:
+            coins = 0
+        if ruby is None:
+            ruby = 0
+            
         if score >= 100000: 
             score = f'{str(score)[:-3]}k' # сокращение чисел
         if coins >= 100000:
