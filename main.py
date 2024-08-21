@@ -110,43 +110,43 @@ async def reload(interaction: disnake.AppCommandInteraction):
         countdown(interaction)
     )
 
-# @bot.event
-# async def on_slash_command_error(interaction: disnake.AppCommandInteraction, error):
-#     color = disnake.Colour(0x1D53CA)  # Создание объекта цвета
+@bot.event
+async def on_slash_command_error(interaction: disnake.AppCommandInteraction, error):
+    color = disnake.Colour(0x1D53CA)  # Создание объекта цвета
 
-#     if not interaction.response.is_done():
-#         try:
-#             if isinstance(error, commands.CommandInvokeError):
-#                 embed = disnake.Embed(
-#                     description=f"### <:wrong1:1274387454987735123> Произошла ошибка при выполнении команды:\n```{error}```",
-#                     color=color
-#                 )
-#                 await interaction.response.send_message(embed=embed, ephemeral=True)
-#             elif isinstance(error, commands.MissingPermissions):
-#                 embed = disnake.Embed(
-#                     description=f"### <:roleuser:1274387457298927711> У вас недостаточно прав для выполнения этой команды\n```Отказано в доступе```",
-#                     color=color
-#                 )
-#                 await interaction.response.send_message(embed=embed, ephemeral=True)
-#             elif isinstance(error, commands.NotOwner):
-#                 embed = disnake.Embed(
-#                     description=f"### <:wrong1:1274387454987735123> Эта команда доступна только для владельца бота\n```Отказано в доступе```",
-#                     color=color
-#                 )
-#                 await interaction.response.send_message(embed=embed, ephemeral=True)
-#             else:
-#                 embed = disnake.Embed(
-#                     description=f"### <:wrong1:1274387454987735123> Произошла неизвестная ошибка:\n```{error}```",
-#                     color=color
-#                 )
-#                 await interaction.response.send_message(embed=embed, ephemeral=True)
-#                 logging.error(f"Неизвестная ошибка: {error}")
-#         except disnake.errors.NotFound:
-#             logging.error("Webhook not found or interaction is already responded to.")
-#         except Exception as e:
-#             logging.error(f"An unexpected error occurred: {e}")
-#     else:
-#         logging.warning("Cannot send response; interaction is already done.")
+    if not interaction.response.is_done():
+        try:
+            if isinstance(error, commands.CommandInvokeError):
+                embed = disnake.Embed(
+                    description=f"### <:wrong1:1274387454987735123> Произошла ошибка при выполнении команды:\n```{error}```",
+                    color=color
+                )
+                await interaction.response.send_message(embed=embed, ephemeral=True)
+            elif isinstance(error, commands.MissingPermissions):
+                embed = disnake.Embed(
+                    description=f"### <:roleuser:1274387457298927711> У вас недостаточно прав для выполнения этой команды\n```Отказано в доступе```",
+                    color=color
+                )
+                await interaction.response.send_message(embed=embed, ephemeral=True)
+            elif isinstance(error, commands.NotOwner):
+                embed = disnake.Embed(
+                    description=f"### <:wrong1:1274387454987735123> Эта команда доступна только для владельца бота\n```Отказано в доступе```",
+                    color=color
+                )
+                await interaction.response.send_message(embed=embed, ephemeral=True)
+            else:
+                embed = disnake.Embed(
+                    description=f"### <:wrong1:1274387454987735123> Произошла неизвестная ошибка:\n```{error}```",
+                    color=color
+                )
+                await interaction.response.send_message(embed=embed, ephemeral=True)
+                logging.error(f"Неизвестная ошибка: {error}")
+        except disnake.errors.NotFound:
+            logging.error("Webhook not found or interaction is already responded to.")
+        except Exception as e:
+            logging.error(f"An unexpected error occurred: {e}")
+    else:
+        logging.warning("Cannot send response; interaction is already done.")
 
 
 token = os.getenv('BETA')
