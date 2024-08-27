@@ -10,7 +10,7 @@ class Profile(commands.Cog):
         self.bot = bot
         self.rank_db = RankDatabase(self.bot)
         self.voice_start_times = {} 
-        self.bot_owner_id = 914812102768734258
+        self.bot_owner_id = ... 
     
     async def get_avatar(self, url: str) -> bytes: # алгоритм жля получения и чтения аватара юзера
         async with aiohttp.ClientSession() as session:
